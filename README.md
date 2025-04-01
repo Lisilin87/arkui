@@ -16,4 +16,19 @@ We sincerely appreciate the reviewer’s recognition of our research objectives.
 | o1-mini-ICL   | 75.42   | 75.94  | 86.80   | 86.90  | 53.39   | 75.52  | 79.17   | 89.09  | 32.25   | 81.37  | 69.47    | 81.42  |
 | o3-mini-ICL   | 83.77   | 84.25  | 88.36   | 88.38  | 57.51   | 80.49  | 64.04   | 85.19  | 38.49   | 85.57  | 74.44    | 85.75  |
 
+## Weakness 3 inference latency
+
+We appreciate the reviewer’s attention to the practical deployment of the system. Our tests on an RTX 3090 platform show that the inference latency of the locally deployed model can be controlled within the range of a few seconds, which generally meets practical requirements. However, to further enhance user experience—ideally reducing latency to under one second—optimizing inference speed is indeed one of the key directions for our future work.
+
+| Models       | LLaMa3-8b | Qwen2.5-7B | Mistral-7B | Gemma2-9B | Deepseek-V3 | GPT-4o |
+|--------------|-----------|------------|------------|-----------|--------------|--------|
+| Latency      | 2.49s     | 1.99s      | 3.05s      | 6.92s     | 6.79s        | 1.16s  |
+
+## Weakness 4 release code and dataset
+
+As stated in the abstract, we are committed to releasing all research code and datasets. The GitHub repository is currently being organized and will be made publicly available soon.
+
+## Suggestions 
+
+Thank you for your suggestions.
 
