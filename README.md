@@ -32,3 +32,44 @@ As stated in the abstract, we are committed to releasing all research code and d
 
 Thank you for your suggestions.
 
+
+## Weakness 1 distribution of different types of instructions
+
+We sincerely thank the reviewer for the in-depth attention to this issue. **We believe the observed distribution is realistically reasonable.** From the perspective of load balancing theory, humans tend to execute a single type of task multiple times rather than perform multiple distinct tasks at once [1]. As a result, single-device operation commands are significantly more frequent than multi-device operation commands.
+﻿
+Regarding the relatively small number of IM instructions, from a probabilistic standpoint, **the likelihood of executing entirely valid or entirely invalid operations across multiple devices is much lower than that of mixed valid and invalid operations**. This trend is also reflected in the data distribution shown in Table 2, where the number of VM and IM instructions is roughly similar, yet both are considerably fewer than MM instructions.
+
+> [1] John Sweller. 2011. Chapter two - cognitive load theory. volume 55 of Psychology of Learning and Motivation, pages 37–76. Academic Press.
+
+
+## Weakness 2 quality verification
+
+We sincerely apologize for the confusion caused by our incomplete description. As you correctly pointed out, our human quality control process does not focus solely on fluency. **We certainly also consider the consistency between the synthesized human instructions and the corresponding machine instructions.** If any inconsistency is found, the instruction is directly assigned a score of 0. We have revised the relevant statements in the paper accordingly.
+
+
+## Suggestions 
+
+Thank you very much for your valuable suggestion. We have adopted your feedback and made the corresponding revisions in the paper.
+
+
+## Weakness 1 invalid instruction quality control
+
+We sincerely appreciate the reviewer’s attention to this part of the work. We would like to clarify that the design of the invalid instructions does not stem from flaws in the synthesis process. In fact, **these invalid instructions are intentionally crafted to simulate two types of realistic error scenarios: operating on non-existent devices and operating on non-existent device attributes**. During the synthesis process, the quality control standards applied to  invalid  and valid instructions are equivalent; therefore, no additional quality control measures are required specifically for erroneous instructions. For better understanding, we kindly refer you to the detailed data examples provided in the appendix A.
+
+## Weakness 2 RAG experiments
+
+|                          | None Useful State Context | None Useful Method Context | Lack Useful State Context | Lack Useful Method Context |
+|--------------------------|---------------------------|-----------------------------|----------------------------|-----------------------------|
+| Single Device instruction| 74.49%                    | 75.97%                      | -                          | -                           |
+| Multi Devices instructions| 46.47%                   | 48.74%                      | 46.65%                     | 45.04%                      |
+
+
+
+
+
+
+
+
+
+
+
