@@ -120,6 +120,7 @@ We understand the reviewer's concern regarding this issue. It is important to cl
   - It avoids time delays caused by real device execution (i.e., there is no need to wait for physical feedback).
 ﻿
   - It aligns with the current mainstream practices in embodied AI research[1-2].
+
 ﻿
 **All device types used in our experiments were listed in detail in Appendix A**. Since the experiments are conducted in a virtual environment, device information does not rely on specific models or manufacturers, which in turn ensures consistency across experimental conditions.
 
