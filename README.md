@@ -98,8 +98,11 @@ In summary, we believe that this distribution is consistent with realistic usage
 Thank you for your suggestion. We have carefully proofread the entire paper and made the revisions.
 
 >[1] Jiashu Yao, Heyan Huang, Zeming Liu, Haoyu Wen, Wei Su, Boao Qian, and Yuhang Guo. 2024. Reff: Reinforcing format faithfulness in language models across varied tasks.
+
 >[2]Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa Prasad Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, and Peter Clark. 2023. Self-refine: Iterative refinement with self-feedback.
+
 >[3] Weijia Shi, Xiaochuang Han, Mike Lewis, Yulia Tsvetkov, Luke Zettlemoyer, and Scott Wen tau Yih. 2023. Trusting your evidence: Hallucinate less with context-aware decoding.
+
 >[4] John Sweller. 2011. Chapter two - cognitive load theory. volume 55 of Psychology of Learning and Motivation, pages 37–76. Academic Press.
 
 
