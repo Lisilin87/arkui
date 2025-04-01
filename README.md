@@ -1,4 +1,4 @@
-#### Reviewer sCpG
+# Reviewer sCpG
 ## Weakness 1 instruction quality
 
 We sincerely thank the reviewers for their valuable comments. Regarding the choice of instruction generation methods, we conducted extensive comparative experiments. Specifically, **we tested various large language models, including ChatGPT-3.5, GPT-4, and Qwen-72B, and also included manually written instructions as a baseline**. The results demonstrate that ChatGPT-3.5 offers the best overall performance in terms of **generation quality** (as shown in the appendix with typical smart home commands such as "Turn on the light in the living room"), **efficiency, and cost-effectiveness**. It is worth noting that **manually written instructions often suffer from semantic ambiguity in practical testing**, which is one of the key reasons we ultimately selected ChatGPT-3.5 as the primary generation tool.
@@ -32,7 +32,7 @@ As stated in the abstract, we are committed to releasing all research code and d
 
 Thank you for your suggestions.
 
-#### Reviewer  KzZR
+# Reviewer  KzZR
 
 ## Weakness 1 distribution of different types of instructions
 
@@ -52,7 +52,7 @@ We sincerely apologize for the confusion caused by our incomplete description. A
 
 Thank you very much for your valuable suggestion. We have adopted your feedback and made the corresponding revisions in the paper.
 
-#### Reviewer  8n4H
+# Reviewer  8n4H
 
 ## Weakness 1 invalid instruction quality control
 
@@ -107,7 +107,7 @@ Thank you for your suggestion. We have carefully proofread the entire paper and 
 
 
 
-#### Reviewer csTG
+## Reviewer csTG
 
 ## Weakness and Suggestions 1 details of dataset construction
 
