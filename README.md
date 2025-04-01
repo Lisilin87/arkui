@@ -58,11 +58,22 @@ We sincerely appreciate the reviewer’s attention to this part of the work. We 
 
 ## Weakness 2 RAG experiments
 
+We have supplemented the statistical table of retrieval context error ratio in the paper.
+
 |                          | None Useful State Context | None Useful Method Context | Lack Useful State Context | Lack Useful Method Context |
 |--------------------------|---------------------------|-----------------------------|----------------------------|-----------------------------|
 | Single Device instruction| 74.49%                    | 75.97%                      | -                          | -                           |
 | Multi Devices instructions| 46.47%                   | 48.74%                      | 46.65%                     | 45.04%                      |
 
+As discussed in Section 5.2, in most cases, the retrieved context does not match the required device states or methods specified by the input instruction. In the absence of correct context, the model exhibits the following behavior:
+
+| Data Type | Input                                                                                                                                                      | Golden                                                                                                                   | Generated      |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------------|
+| VS        | Set the brightness of the light on the balcony to 50.                                                                  | `balcony.light.set_brightness(50)`                                                                                       | `error_input`  |
+| IS        | Pause the media player in the living room.                                                                                                                 | `error_input`                                                                                                            | `error_input`  |
+| VM        | Lower the air conditioner temperature in the guest bedroom to 20 degrees,  <br> set the brightness of the light in the foyer to 50, <br> and increase the intensity of the dehumidifier in the study room by 32%. | `guest_bedroom.air_conditioner.set_temperature(20)`,<br>`foyer.light.set_brightness(50)`,<br>`study_room.dehumidifiers.set_intensity(70)` | `error_input`  |
+| IM        | Set the intensity of the humidifier to 60 in the study room, <br> adjust the volume of the media player to 60 on the balcony, <br> and set the degree of the curtain to 20 on the balcony.        | `error_input`,<br>`error_input`,<br>`error_input`                                                                       | `error_input`,<br>`error_input`,<br>`error_input`  |
+| MM        | Set the air conditioner temperature to 16 degrees in the guest bedroom, <br> turn off the lights in the study room, <br> decrease the media player volume by 30 percent on the balcony, <br> set the dehumidifier intensity to 60 in the master bedroom, <br> and adjust the heating temperature to 27 degrees in the bathroom. | `guest_bedroom.air_conditioner.set_temperature(16)`,<br>`study_room.light.turn_off()`,<br>`error_input`,<br>`error_input`,<br>`bathroom.heating.set_temperature(27)` | `error_input`,<br>`error_input`,<br>`error_input`,<br>`error_input`,<br>`error_input` |
 
 
 
