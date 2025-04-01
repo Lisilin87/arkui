@@ -5,7 +5,7 @@ We sincerely thank the reviewers for their valuable comments. Regarding the choi
 
 ## Weakness 2 experimental supplement
 
-We sincerely appreciate the reviewer’s recognition of our research objectives. **It is important to clarify that during the time this study was conducted, models such as O1, O3, R1, and QWQ had not yet been officially released**. Following your suggestion, we have promptly conducted supplementary tests on these newly released models and updated the relevant sections of the paper with the detailed results. However, due to time constraints and the lack of batch API support for DeepSeek, as well as the relatively slow inference speed of QWQ-32B, we are currently unable to provide the full evaluation results for the DeepSeek and QWQ models. Nevertheless, our preliminary experiments indicate that the findings are consistent with the conclusions presented in our paper.
+We sincerely appreciate the reviewer’s recognition of our research objectives. **It is important to clarify that during the time this study was conducted, models such as O1, O3, R1, and QWQ had not yet been officially released**. Following your suggestion, we have promptly conducted supplementary tests on these newly released models and updated the relevant sections of the paper with the detailed results. However, due to time constraints and the lack of batch API support for DeepSeek, as well as the relatively slow inference speed of QWQ-32B, we are currently unable to provide the full evaluation results for the DeepSeek and QWQ models. Nevertheless, **our preliminary experiments indicate that the findings are consistent with the conclusions presented in our paper**.
 
 | Model         | VS SUCC | VS F1  | IS SUCC | IS F1  | VM SUCC | VM F1  | IM SUCC | IM F1  | MM SUCC | MM F1  | ALL SUCC | ALL F1 |
 |---------------|---------|--------|---------|--------|---------|--------|---------|--------|---------|--------|----------|--------|
@@ -79,7 +79,7 @@ Two types of errors persist after fine-tuning: unfaithful and context attention 
 
 ## Suggestions 1 deployment safety
 
-We sincerely thank the reviewer for the valuable suggestions regarding safety concerns. We fully agree that deploying LLM-based assistants in smart home environments poses multiple safety risks—not only the execution of invalid instructions, as discussed in our paper, but also potential issues such as user data leakage. To address these concerns, we recommend incorporating the Guardrails framework to enhance system safety through the following mechanisms:
+We sincerely thank the reviewer for the valuable suggestions regarding safety concerns. We fully agree that deploying LLM-based assistants in smart home environments poses multiple safety risks—not only the execution of invalid instructions, as discussed in our paper, but also potential issues such as user data leakage. To address these concerns, **we recommend incorporating the Guardrails framework to enhance system safety through the following mechanisms**:
 
 - Pre-execution safety assessment of instructions
 
@@ -91,7 +91,7 @@ We thank the reviewer for the thoughtful and in-depth comments on this issue. Ac
 ﻿
 Furthermore, regarding the relatively small number of IM and VM instructions, from a probabilistic perspective, the likelihood of executing multiple operations that are either all valid or all invalid at once is much lower than the likelihood of mixed valid and invalid operations. This further explains the higher proportion of MM instructions.
 ﻿
-In summary, we believe that this distribution is consistent with realistic usage patterns. It is also worth noting that, as shown in Figure 5, even without any sample balancing techniques, the model still achieves significant performance improvements on low-resource instruction types.
+In summary, **we believe that this distribution is consistent with realistic usage patterns**. It is also worth noting that, as shown in Figure 5, even without any sample balancing techniques, the model still achieves significant performance improvements on low-resource instruction types.
 
 ## Suggestions 3 Typos
 
@@ -113,7 +113,7 @@ Thank you for your suggestion. We have carefully proofread the entire paper and 
 
 We understand the reviewer's concern regarding this issue. It is important to clarify that in our experimental design, physical and virtual devices are functionally equivalent for the purpose of system testing. This is because:
 ﻿
-- The success criterion for testing is unified: the system is considered successful as long as it outputs the correct API call, regardless of the device type.
+- The success criterion for testing is **unified**: the system is considered successful as long as it outputs the correct API call, regardless of the device type.
 ﻿
 - Using a virtual environment offers several advantages:
 ﻿
@@ -121,11 +121,11 @@ We understand the reviewer's concern regarding this issue. It is important to cl
 ﻿
   - It aligns with the current mainstream practices in embodied AI research[1-2].
 ﻿
-All device types used in our experiments are listed in detail in Appendix A. Since the experiments are conducted in a virtual environment, device information does not rely on specific models or manufacturers, which in turn ensures consistency across experimental conditions.
+**All device types used in our experiments were listed in detail in Appendix A**. Since the experiments are conducted in a virtual environment, device information does not rely on specific models or manufacturers, which in turn ensures consistency across experimental conditions.
 
 ## Weakness and Suggestions 2 explain the findings
 
-We have addressed the reason why GPT-4o achieves the best performance in point 4 of the *Results* section. The core challenge of our task lies in long-context attention, as the model needs to comprehensively analyze the entire set of device states and methods to determine which devices are operable and which ones do not exist. GPT-4o demonstrates significantly stronger context-handling capabilities compared to the other open-source models evaluated.
+We have addressed the reason why GPT-4o achieves the best performance in point 4 of the *Results* section. **The core challenge of our task lies in long-context attention**, as the model needs to comprehensively analyze the entire set of device states and methods to determine which devices are operable and which ones do not exist. GPT-4o demonstrates significantly stronger context-handling capabilities compared to the other open-source models evaluated.
 
 As for the varying performance gains across different tasks, this is primarily due to differences in task difficulty. A single model may exhibit different levels of improvement depending on the complexity of the task it is addressing.
 
