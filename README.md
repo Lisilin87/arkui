@@ -10,7 +10,7 @@ We sincerely thank the reviewers for their insightful feedback and constructive 
 
 ### Response: 
 
-We sincerely thank the reviewers for their valuable comments. Regarding the choice of instruction generation methods, we conducted extensive comparative experiments. Specifically, **we tested various large language models, including ChatGPT-3.5, GPT-4, and Qwen-72B, and also included manually written instructions as a baseline**. The results demonstrate that ChatGPT-3.5 offers the best overall performance in terms of **generation quality** (as shown in the appendix with typical smart home commands such as "Turn on the light in the living room"), **efficiency, and cost-effectiveness**. It is worth noting that **manually written instructions often suffer from semantic ambiguity in practical testing**, which is one of the key reasons we ultimately selected ChatGPT-3.5 as the primary generation tool.
+Regarding the choice of instruction generation methods, we conducted extensive comparative experiments. Specifically, **we tested various large language models, including ChatGPT-3.5, GPT-4, and Qwen-72B, and also included manually written instructions as a baseline**. The results demonstrate that ChatGPT-3.5 offers the best overall performance in terms of **generation quality** (as shown in the appendix with typical smart home commands such as "Turn on the light in the living room"), **efficiency, and cost-effectiveness**. It is worth noting that **manually written instructions often suffer from semantic ambiguity in practical testing**, which is one of the key reasons we ultimately selected ChatGPT-3.5 as the primary generation tool.
 
 ## Weakness 2 Model Coverage (Missing Reasoning Models)  
 
@@ -18,16 +18,16 @@ We sincerely thank the reviewers for their valuable comments. Regarding the choi
 
 ### Response: 
 
-We sincerely appreciate the reviewer’s recognition of our research objectives. **It is important to clarify that during the time this study was conducted, models such as O1, O3, R1, and QWQ had not yet been officially released**. Following your suggestion, we have promptly conducted supplementary tests on these newly released models and updated the relevant sections of the paper with the detailed results. However, due to time constraints and the lack of batch API support for DeepSeek, as well as the relatively slow inference speed of QWQ-32B, we are currently unable to provide the full evaluation results for the DeepSeek and QWQ models. 
+**It is important to clarify that during the time this study was conducted, models such as O1, O3, R1, and QWQ had not yet been officially released**. Following your suggestion, we have promptly conducted supplementary tests on these newly released models and updated the relevant sections of the paper with the detailed results. However, due to time constraints and the lack of batch API support for DeepSeek, as well as the relatively slow inference speed of QWQ-32B, we are currently unable to provide the full evaluation results for the DeepSeek and QWQ models. 
 
-| Model         | VS SUCC | VS F1  | IS SUCC | IS F1  | VM SUCC | VM F1  | IM SUCC | IM F1  | MM SUCC | MM F1  | ALL SUCC | ALL F1 |
-|---------------|---------|--------|---------|--------|---------|--------|---------|--------|---------|--------|----------|--------|
-| o1-mini       | 38.65   | 39.46  | 20.34   | 30.34  | 1.19    | 2.09   | 0.0     | 27.75  | 0.73    | 15.13  | 21.85    | 23.20  |
-| o3-mini       | 27.57   | 28.16  | 45.43   | 57.51  | 4.56    | 13.64  | 0.0     | 33.08  | 0.21    | 16.30  | 27.66    | 27.32  |
-| Deepseek-V3-ICL | 80.00 | 80.06  | 58.58   | 58.48  | 54.69   | 77.29  | 11.34   | 32.22  | 5.35    | 52.74  | 53.41    | 58.74  |
-| GPT-4o-ICL    | 74.25   | 74.30  | 87.10   | 87.09  | 45.71   | 71.48  | 61.86   | 81.18  | 23.35   | 78.98  | 66.85    | 79.58  |
-| o1-mini-ICL   | 75.42   | 75.94  | 86.80   | 86.90  | 53.39   | 75.52  | 79.17   | 89.09  | 32.25   | 81.37  | 69.47    | 81.42  |
-| o3-mini-ICL   | 83.77   | 84.25  | 88.36   | 88.38  | 57.51   | 80.49  | 64.04   | 85.19  | 38.49   | 85.57  | 74.44    | 85.75  |
+|Model           | VS SUCC |  VS F1  | IS SUCC |  IS F1  | VM SUCC |  VM F1  | IM SUCC |  IM F1  | MM SUCC |  MM F1  |  ALL SUCC |  ALL F1 |
+|:---------------|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:---------:|:-------:|
+| o1-mini        |  38.65  |  39.46  |  20.34  |  30.34  |   1.19  |   2.09  |   0.0   |  27.75  |   0.73  |  15.13  |   21.85   |  23.20  |
+| o3-mini        |  27.57  |  28.16  |  45.43  |  57.51  |   4.56  |  13.64  |   0.0   |  33.08  |   0.21  |  16.30  |   27.66   |  27.32  |
+| Deepseek-V3-ICL|  80.00  |  80.06  |  58.58  |  58.48  |  54.69  |  77.29  |  11.34  |  32.22  |   5.35  |  52.74  |   53.41   |  58.74  |
+| GPT-4o-ICL     |  74.25  |  74.30  |  87.10  |  87.09  |  45.71  |  71.48  |  61.86  |  81.18  |  23.35  |  78.98  |   66.85   |  79.58  |
+| o1-mini-ICL    |  75.42  |  75.94  |  86.80  |  86.90  |  53.39  |  75.52  |  79.17  |  89.09  |  32.25  |  81.37  |   69.47   |  81.42  |
+| o3-mini-ICL    |  83.77  |  84.25  |  88.36  |  88.38  |  57.51  |  80.49  |  64.04  |  85.19  |  38.49  |  85.57  |   74.44   |  85.75  |
 
 Nevertheless, **our preliminary experiments indicate that the findings are consistent with the conclusions presented in our paper：**
 
@@ -41,7 +41,7 @@ Nevertheless, **our preliminary experiments indicate that the findings are consi
 
 ### Response: 
 
-We appreciate the reviewer’s attention to the practical deployment of the system. Our tests on an RTX 3090 platform show that the inference latency of the locally deployed model can be controlled within the range of a few seconds, which generally meets practical requirements. However, to further enhance user experience—ideally reducing latency to under one second—optimizing inference speed is indeed one of the key directions for our future work.
+We thank the reviewer for emphasizing real-world applicability. Our tests on an RTX 3090 platform show that the inference latency of the locally deployed model can be controlled within the range of a few seconds, which generally meets practical requirements. However, to further enhance user experience—ideally reducing latency to under one second—optimizing inference speed is indeed one of the key directions for our future work.
 
 | Models       | LLaMa3-8b | Qwen2.5-7B | Mistral-7B | Gemma2-9B | Deepseek-V3 | GPT-4o |
 |--------------|-----------|------------|------------|-----------|--------------|--------|
@@ -79,9 +79,6 @@ We appreciate this critical observation. The distribution reflects two intention
 
 - **Probabilistic Validity**: **The likelihood of executing entirely valid or entirely invalid operations across multiple devices is much lower than that of mixed valid and invalid operations**. This trend is also reflected in the data distribution shown in Table 2, where the number of VM and IM instructions is roughly similar, yet both are considerably fewer than MM instructions.
 
-> [1] John Sweller. 2011. Chapter two - cognitive load theory. volume 55 of Psychology of Learning and Motivation, pages 37–76. Academic Press.
-
-
 ## Weakness 2 Human quality verification scope
 
 *Reviewer's concern*: Did verification check for instruction-ground truth alignment beyond fluency?  
@@ -102,6 +99,8 @@ Any mismatch resulted in immediate rejection (score=0).
 
 Thank you very much for your valuable suggestion. We have adopted your feedback and made the corresponding revisions in the paper.
 
+> [1] John Sweller. 2011. Chapter two - cognitive load theory. volume 55 of Psychology of Learning and Motivation, pages 37–76. Academic Press.
+
 # Reviewer  8n4H
 
 ## General Response  
@@ -114,7 +113,7 @@ We sincerely thank the reviewers for their constructive feedback and for recogni
 
 ### Response: 
 
-We sincerely appreciate the reviewer’s attention to this part of the work. We would like to clarify that the design of the invalid instructions does not stem from flaws in the synthesis process. In fact, **these invalid instructions are intentionally crafted to simulate two types of realistic error scenarios: operating on non-existent devices and operating on non-existent device attributes**. During the synthesis process, the quality control standards applied to  invalid  and valid instructions are equivalent; therefore, no additional quality control measures are required specifically for erroneous instructions. For better understanding, we kindly refer you to the detailed data examples provided in the appendix A.
+We would like to clarify that the design of the invalid instructions does not stem from flaws in the synthesis process. In fact, **these invalid instructions are intentionally crafted to simulate two types of realistic error scenarios: operating on non-existent devices and operating on non-existent device attributes**. During the synthesis process, the quality control standards applied to  invalid  and valid instructions are equivalent; therefore, no additional quality control measures are required specifically for erroneous instructions. For better understanding, we kindly refer you to the detailed data examples provided in the appendix A.
 
 ## Weakness 2 RAG experiments
 
@@ -139,6 +138,14 @@ As discussed in Section 5.2, in most cases, the retrieved context does not match
 | IM        | Set the intensity of the humidifier to 60 in the study room, <br> adjust the volume of the media player to 60 on the balcony, <br> and set the degree of the curtain to 20 on the balcony.        | `error_input`,<br>`error_input`,<br>`error_input`                                                                       | `error_input`,<br>`error_input`,<br>`error_input`  |
 | MM        | Set the air conditioner temperature to 16 degrees in the guest bedroom, <br> turn off the lights in the study room, <br> decrease the media player volume by 30 percent on the balcony, <br> set the dehumidifier intensity to 60 in the master bedroom, <br> and adjust the heating temperature to 27 degrees in the bathroom. | `guest_bedroom.air_conditioner.set_temperature(16)`,<br>`study_room.light.turn_off()`,<br>`error_input`,<br>`error_input`,<br>`bathroom.heating.set_temperature(27)` | `error_input`,<br>`error_input`,<br>`error_input`,<br>`error_input`,<br>`error_input` |
 
+| Data Type | Input                                                                                                                                                      | Golden                                                                                                                   | Generated      |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------------|
+| VS        | Set the brightness of the light on the balcony to 50.                                                                  | `balcony.light.set_brightness(50)`                                                                                       | `error_input`  |
+| IS        | Pause the media player in the living room.                                                                                                                 | `error_input`                                                                                                            | `error_input`  |
+| VM        | Lower the air conditioner temperature in the guest bedroom to 20 degrees,   set the brightness of the light in the foyer to 50, and increase the intensity of the dehumidifier in the study room by 32%. | `guest_bedroom.air_conditioner.set_temperature(20)`, `foyer.light.set_brightness(50)`, `study_room.dehumidifiers.set_intensity(70)` | `error_input`, `error_input`, `error_input`   |
+| IM        | Set the intensity of the humidifier to 60 in the study room, <br> adjust the volume of the media player to 60 on the balcony, <br> and set the degree of the curtain to 20 on the balcony.        | `error_input`, `error_input`, `error_input`                                                                       | `error_input`, `error_input`, `error_input`  |
+| MM        | Set the air conditioner temperature to 16 degrees in the guest bedroom, turn off the lights in the study room, decrease the media player volume by 30 percent on the balcony, set the dehumidifier intensity to 60 in the master bedroom, and adjust the heating temperature to 27 degrees in the bathroom. | `guest_bedroom.air_conditioner.set_temperature(16)`, `study_room.light.turn_off()`, `error_input`,            `error_input`, `bathroom.heating.set_temperature(27)` | `error_input`, `error_input`, `error_input`, `error_input`, `error_input` |
+
 This context mismatch leads to a counterintuitive phenomenon—performance degradation on simple and effective tasks, but unexpected improvement on more difficult ones. Upon further analysis, **we find that this is caused by insufficient embedding similarity between device states/methods and user instructions, making it difficult for the similarity-based retrieval mechanism to distinguish between different context fragments effectively**. To address this issue, we suggest training a specialized retrieval optimization model to improve context alignment accuracy.
 
 ## Weakness 3 actionable directions for future research
@@ -147,7 +154,7 @@ This context mismatch leads to a counterintuitive phenomenon—performance degra
 
 ### Response: 
 
-We thank the reviewer for underscoring the need for clearer technical pathways. Post fine-tuning, two error types dominate: unfaithful and context attention errors. To address the unfaithfulness issue, we suggest applying **reinforcement learning-based** optimization methods (e.g., REFF[1]). Context attention errors, on the other hand, essentially fall under the category of hallucination problems and can be mitigated using existing hallucination reduction techniques, such as **self-refinement**[2] and **context-aware decoding**[3].
+Post fine-tuning, two error types dominate: unfaithful and context attention errors. To address the unfaithfulness issue, we suggest applying **reinforcement learning-based** optimization methods (e.g., REFF[1]). Context attention errors, on the other hand, essentially fall under the category of hallucination problems and can be mitigated using existing hallucination reduction techniques, such as **self-refinement**[2] and **context-aware decoding**[3].
 
 ## Suggestions 1 Deployment Safety Considerations  
 
@@ -176,7 +183,6 @@ Thank you for your suggestion. We have carefully proofread the entire paper and 
 >[3] Weijia Shi, Xiaochuang Han, Mike Lewis, Yulia Tsvetkov, Luke Zettlemoyer, and Scott Wen tau Yih. 2023. Trusting your evidence: Hallucinate less with context-aware decoding.
 
 >[4] John Sweller. 2011. Chapter two - cognitive load theory. volume 55 of Psychology of Learning and Motivation, pages 37–76. Academic Press.
-
 
 
 ## Reviewer csTG
